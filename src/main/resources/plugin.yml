@@ -1,0 +1,14 @@
+name: LoginPlugin
+version: '${project.version}'
+main: me.lphix.loginplugin.LoginPlugin
+api-version: 1.18
+commands:
+  login:
+    description: Logs in
+    usage: /<command>
+  logout:
+    description: Logs out
+    usage: /<command>
+  register:
+    description: Registers an account
+    usage: /<register>
