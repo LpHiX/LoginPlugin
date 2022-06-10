@@ -11,4 +11,7 @@ commands:
     usage: /<command>
   register:
     description: Registers an account
-    usage: /<register>
+    usage: /<command>
+  loginadmin:
+    description: Admin commands
+    usage: /<command> Only for admins.
