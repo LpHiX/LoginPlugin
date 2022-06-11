@@ -15,7 +15,16 @@ public class MySQL {
     private Connection connection;
 
     public boolean isConnected(){
-        return(connection!=null);
+        if(connection!= null){
+            try {
+                return !connection.isClosed();
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
+        } else{
+            return false;
+        }
+        return false;
     }
 
     public void connect() throws ClassNotFoundException, SQLException {

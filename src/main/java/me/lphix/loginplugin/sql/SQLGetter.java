@@ -39,9 +39,10 @@ public class SQLGetter {
         try{
             PreparedStatement ps = sql.getConnection().prepareStatement(
                 "CREATE TABLE IF NOT EXISTS logged_users (" +
-                        "uuid VARCHAR(100)" +
-                        "account_id INT" +
+                        "uuid VARCHAR(100) PRIMARY KEY," +
+                        "account_id INT(100)" +
                     ");");
+            ps.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace();
         }

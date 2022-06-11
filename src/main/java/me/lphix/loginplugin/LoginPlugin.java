@@ -40,7 +40,7 @@ public final class LoginPlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        SQL.disconnect();
     }
 
     public MySQL getSQL(){return SQL;}

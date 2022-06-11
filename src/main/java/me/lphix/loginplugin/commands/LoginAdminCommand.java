@@ -24,21 +24,24 @@ public class LoginAdminCommand implements CommandExecutor {
         if(args.length == 1){
             switch (args[0]){
                 case "connect":
-                    if(sql.isConnected()) {
+                    if(!sql.isConnected()) {
                         try {
                             sql.connect();
                             sender.sendMessage(Component.text("Database has been connected", NamedTextColor.GREEN));
-                            return true;
                         } catch (ClassNotFoundException | SQLException e) {
                             e.printStackTrace();
                             sender.sendMessage(Component.text("Database could not be connected", NamedTextColor.RED));
-                            return true;
                         }
+                        return true;
                     } else{
                         sender.sendMessage(Component.text("Database is already connected", NamedTextColor.RED));
                         return true;
                     }
                 case "disconnect":
+                    if(!sql.isConnected()){
+                        sender.sendMessage(Component.text("Database is not connected and thus cannot be disconnected", NamedTextColor.RED));
+                        return true;
+                    }
                     if(sql.disconnect()){
                         sender.sendMessage(Component.text("Database has been disconnected", NamedTextColor.GREEN));
                     } else {

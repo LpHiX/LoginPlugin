@@ -25,8 +25,11 @@ public class LoginCommand implements CommandExecutor {
             return true;
         }
         if(args.length != 2) return false;
-        data.login(p, args[0], args[1]);
-        sender.sendMessage(Component.text("You have been logged in successfully", NamedTextColor.GREEN));
+        if(data.login(p, args[0], args[1])){
+            sender.sendMessage(Component.text("You have been logged in successfully", NamedTextColor.GREEN));
+        } else {
+            sender.sendMessage(Component.text("You could not be logged in", NamedTextColor.RED));
+        }
         return true;
     }
 }
