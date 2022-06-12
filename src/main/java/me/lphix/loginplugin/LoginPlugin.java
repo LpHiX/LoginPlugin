@@ -1,11 +1,11 @@
 package me.lphix.loginplugin;
 
-import me.lphix.loginplugin.commands.LoginAdminCommand;
+import me.lphix.essentialsl.EssentialsL;
+import me.lphix.essentialsl.sql.MySQL;
 import me.lphix.loginplugin.commands.LoginCommand;
 import me.lphix.loginplugin.commands.LogoutCommand;
 import me.lphix.loginplugin.commands.RegisterCommand;
-import me.lphix.loginplugin.sql.MySQL;
-import me.lphix.loginplugin.sql.SQLGetter;
+import me.lphix.loginplugin.sql.LoginSQLGetter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,13 +14,14 @@ import java.sql.SQLException;
 public final class LoginPlugin extends JavaPlugin {
 
     private MySQL SQL;
-    private SQLGetter data;
+    private LoginSQLGetter data;
     @Override
     public void onEnable() {
-        this.SQL = new MySQL();
-        this.data = new SQLGetter(this);
 
-        this.getCommand("loginadmin").setExecutor(new LoginAdminCommand(this));
+
+        this.SQL = EssentialsL.getSQL();
+        this.data = new LoginSQLGetter(this);
+
         this.getCommand("login").setExecutor(new LoginCommand(this));
         this.getCommand("logout").setExecutor(new LogoutCommand(this));
         this.getCommand("register").setExecutor(new RegisterCommand(this));
@@ -44,5 +45,5 @@ public final class LoginPlugin extends JavaPlugin {
     }
 
     public MySQL getSQL(){return SQL;}
-    public SQLGetter getData(){return data;}
+    public LoginSQLGetter getData(){return data;}
 }

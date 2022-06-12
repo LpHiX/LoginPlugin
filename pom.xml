@@ -70,5 +70,12 @@
             <version>1.18.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>me.lphix</groupId>
+            <artifactId>essentialsl</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>C:/Users/LpHiX/Desktop/Programming/EssentialsL/target/EssentialsL-1.0-SNAPSHOT.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

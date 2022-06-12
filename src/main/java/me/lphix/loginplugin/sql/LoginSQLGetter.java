@@ -1,5 +1,6 @@
 package me.lphix.loginplugin.sql;
 
+import me.lphix.essentialsl.sql.MySQL;
 import me.lphix.loginplugin.LoginPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -8,10 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SQLGetter {
+public class LoginSQLGetter {
     LoginPlugin plugin;
     MySQL sql;
-    public SQLGetter(LoginPlugin plugin) {
+    public LoginSQLGetter(LoginPlugin plugin) {
         this.plugin = plugin;
         this.sql = plugin.getSQL();
     }

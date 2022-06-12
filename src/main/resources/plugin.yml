@@ -2,6 +2,8 @@ name: LoginPlugin
 version: '${project.version}'
 main: me.lphix.loginplugin.LoginPlugin
 api-version: 1.18
+depend:
+  - EssentialsL
 commands:
   login:
     description: Logs in

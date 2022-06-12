@@ -1,7 +1,7 @@
 package me.lphix.loginplugin.commands;
 
 import me.lphix.loginplugin.LoginPlugin;
-import me.lphix.loginplugin.sql.SQLGetter;
+import me.lphix.loginplugin.sql.LoginSQLGetter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.Command;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class LoginCommand implements CommandExecutor {
     LoginPlugin plugin;
-    SQLGetter data;
+    LoginSQLGetter data;
     public LoginCommand(LoginPlugin plugin) {
         this.plugin = plugin;
         this.data = plugin.getData();
